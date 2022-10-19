@@ -46,10 +46,10 @@ window.onload = function () {
     var page = new Page;
     page.changeTitlePage();
     page.setVolume();
-/* 
+
     var player = new Player();
     player.play();
-
+/*
     getStreamingData();
     // Interval to get streaming data in miliseconds
     setInterval(function () {
