@@ -60,3 +60,29 @@ window.onload = function () {
 
     coverArt.style.height = coverArt.offsetWidth + 'px'; */
 }
+
+var audio = new Audio(URL_STREAMING + '/;');
+
+// Player control
+function Player() {
+    this.play = function () {
+        audio.play();
+
+        var defaultVolume = document.getElementById('volume').value;
+
+        if (typeof (Storage) !== 'undefined') {
+            if (localStorage.getItem('volume') !== null) {
+                audio.volume = intToDecimal(localStorage.getItem('volume'));
+            } else {
+                audio.volume = intToDecimal(defaultVolume);
+            }
+        } else {
+            audio.volume = intToDecimal(defaultVolume);
+        }
+        document.getElementById('volIndicator').innerHTML = defaultVolume;
+    };
+
+    this.pause = function () {
+        audio.pause();
+    };
+}
