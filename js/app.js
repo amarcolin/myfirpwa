@@ -42,47 +42,7 @@ const showCoffees = () => {
   // URL of SHOUTCast streaming without / on the final, eg: http://streaming.com:8080
 const URL_STREAMING = "http://nvradios.com:9328";
 
-window.onload = function () {
-    var page = new Page;
-    page.changeTitlePage();
-    page.setVolume();
-
-    var player = new Player();
-    player.play();
-/*
-    getStreamingData();
-    // Interval to get streaming data in miliseconds
-    setInterval(function () {
-        getStreamingData();
-    }, 4000);
-
-    var coverArt = document.getElementsByClassName('cover-album')[0];
-
-    coverArt.style.height = coverArt.offsetWidth + 'px'; */
-}
-
-var audio = new Audio(URL_STREAMING + '/;');
-
-// Player control
-function Player() {
-    this.play = function () {
-        audio.play();
-
-        var defaultVolume = document.getElementById('volume').value;
-
-        if (typeof (Storage) !== 'undefined') {
-            if (localStorage.getItem('volume') !== null) {
-                audio.volume = intToDecimal(localStorage.getItem('volume'));
-            } else {
-                audio.volume = intToDecimal(defaultVolume);
-            }
-        } else {
-            audio.volume = intToDecimal(defaultVolume);
-        }
-        document.getElementById('volIndicator').innerHTML = defaultVolume;
-    };
-
-    this.pause = function () {
-        audio.pause();
-    };
+function play() {
+  var audio = new Audio(URL_STREAMING + '/;');
+  audio.play();
 }
