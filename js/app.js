@@ -43,6 +43,6 @@ const showCoffees = () => {
 const URL_STREAMING = "http://nvradios.com:9328";
 
 function play() {
-  var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+  var audio = new Audio('https://https.nvradios.com/radio/9328/;');
   audio.play();
 }
